@@ -2,10 +2,15 @@
 
 /* Controllers */
 
-angular.module('myApp.controllers', []).
-  controller('MyCtrl1', [function() {
+angular.module('myApp.controllers', [])
+  .controller('LandingPageController',[function(){
 
-  }])
-  .controller('MyCtrl2', [function() {
-
+  	}])
+  .controller('WaitlistController',['$scope', function($scope){
+  	$scope.parties = [];
+  	$scope.party = {name:'',phone:'',size:''};
+  	$scope.saveParty = function(){
+  		$scope.parties.push($scope.party);
+  		$scope.party = {name:'',phone:'',size:''};
+  	};
   }]);
